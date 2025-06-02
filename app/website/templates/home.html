@@ -1,0 +1,23 @@
+
+
+
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block
+  content %}
+  
+<div class="row">
+  {% for item in crypto_data['data'] %}   
+    <div class="book card col-12 col-md-4" style="margin-top: 2%; text-align: center; width: 400px; height: 350px;">
+      <div class="card-body">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/128x128/{{item.id}}.png" alt="{{item.name}} logo">
+        <h5>Coin Name: {{item.name}} </h5>
+        <h5>Symbol: {{item.symbol}}</h5>
+        <h5>Price: {{(item.quote.BTC.price/(1*(10**-8))* 0.0479573687)}} INR</h5>
+        
+      
+      </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
+
+

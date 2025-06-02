@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+
+	<title>Price Prediction Page</title>
+	<style type="text/css">
+         body {
+          background-color: #04244b;
+        /* background-image: url("login_bg.jpg"); */
+        /* background: url('login_bg.jpg') no-repeat center center fixed;  */
+        background-size: cover;
+        background-position: center;
+      }
+		.centered-div {
+             /*position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: antiquewhite;
+            padding: 50px;
+            height: 600px;
+            width: 600px;
+            border-radius: 10px;
+            max-width: 400px; */
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(5px);
+            background-color: rgba(116, 115, 138, 0.3);
+            width: 500px;
+            /* vertical-align: middle; */
+            }
+           .main-div{
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(214, 155, 79);
+            padding: 50px;
+            border-radius: 5px; */
+            max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(5px);
+        background-color: rgba(116, 115, 138, 0.3);
+            }
+            .dropbtn {
+                background-color: #99c8d6;
+                color: white;
+                padding: 10px;
+                /* font-size:px; */
+                border: none;
+                border-radius: 5px;
+            }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  overflow: auto;
+  height: 250px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #1e93aa;}
+.btn {
+                background-color: #e3d196;
+                color: white;
+                padding: 10px;
+                /* font-size:px; */
+                border: none;
+                border-radius: 5px;
+            }
+	</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" id="home" href="/">Home</a>
+        <a class="nav-item nav-link" id="view_graph" href="/view_graph">View graph</a>
+        <a class="nav-item nav-link" id="predict_price" href="/predict_price">Predict price</a>
+        <a class="nav-item nav-link" id="set_reminders" href="/set_reminders">Set reminders</a>
+        <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+      </div>
+  </div>
+</nav>
+  <form method="POST">
+    <div class="centered-div">
+        <h2 style="color: rgb(117, 110, 110); text-align: center;
+        margin-bottom: 30px;">Predict Price</h1>
+        <div class="main-div text-center">
+        <label for="choose_crypto"><p class="h5" style="color: rgba(203, 164, 113, 0.979); text-align: center;">Enter crypto currency name : </p></label>
+        <input type="text" name="crypto">
+        
+      </div>
+        <div style="padding-top: 5px;" class="text-center">
+          <!-- <input type="text" class="form-control" id="price" placeholder="Enter price"> -->
+          <br>
+          <button class="btn btn-outline-success my-2 my-sm-0 text-center" type="submit">Predict</button>
+        </div>
+        <div id="predict_result" class="text-center" style="padding-top: 10px; color: rgba(203, 164, 113, 0.979); padding-top: 5px;"><h5>{{ y }}</h5></div>
+        
+    </div>
+  </form>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
+</body>
+</html>
