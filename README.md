@@ -20,7 +20,10 @@ Data Storage	MongoDB (stores trained model)
 Additional Tools	Pandas, NumPy, Matplotlib, Plotly
 
 🧠 ML Model Details
-Model Type: LSTM
+Model Type: Ensemble Model combining:
+Linear Regression: For trend extrapolation
+LSTM: For capturing long-term sequential patterns in time-series data
+Random Forest: For non-linear pattern recognition and feature importance
 
 Features Used: Close prices, moving averages, historical price trends
 
