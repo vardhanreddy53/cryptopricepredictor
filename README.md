@@ -35,22 +35,22 @@ Evaluation: Mean Squared Error (MSE) used for model performance
 
 👥 Authentication System: Secure login & signup functionality using Flask-Login.
 
-🖼️ Screenshots
-Registration & Login Pages
+🖼️ **Screenshots**
+**Registration & Login Pages**
 ![image](https://github.com/user-attachments/assets/8dff6913-5987-41b8-9b17-185c3418ce53)
 ![image](https://github.com/user-attachments/assets/f20af93c-19f6-4903-b0c0-fb295e0fc000)
 
 
-Home Dashboard with crypto list
+**Home Dashboard with crypto list**
 ![image](https://github.com/user-attachments/assets/ff1015a3-de05-4507-b815-81e5e06293fc)
 
 
-Price Graphs & Prediction Pages
+**Price Graphs & Prediction Pages**
 ![image](https://github.com/user-attachments/assets/b17859fd-668d-40ff-b32a-0f50f974ad74)
 ![image](https://github.com/user-attachments/assets/d82e252a-1995-45a6-bbe2-65d8e23d2a8c)
 
 
-Reminder Setup
+**Reminder Setup**
 ![image](https://github.com/user-attachments/assets/411862e9-67df-4293-bd5d-55df0481bbac)
 
 
